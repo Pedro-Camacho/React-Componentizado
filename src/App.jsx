@@ -1,14 +1,15 @@
-import Header from './Componentes/Header';
 import ConteudoPrincipal from './Componentes/ConteudoPrincipal';
-import Footer from './Componentes/Footer'; 
-
+import Footer from './Componentes/Footer';
+import Header from './Componentes/Header';
+import logoVite from './assets/vite.svg';
 
 function App() {
- 
+
   return (
     <>
       <Header />
-      <ConteudoPrincipal/>
+      <img src={logoVite} />
+      <ConteudoPrincipal />
       <Footer />
     </>
   )
