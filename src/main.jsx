@@ -1,23 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
+import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Sobre from './pages/Sobre.jsx'
+import ConteudoPrincipal from './Componentes/ConteudoPrincipal/index.jsx'
 
-const rotas = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
-  },
-  {
-    path: "/sobre",
-    element: <Sobre />
+    element: <App />,
+    children: [
+      {index: true, element: <ConteudoPrincipal />},
+      {path: "/sobre", element: <Sobre />}
+    ]
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={rotas} />
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )
