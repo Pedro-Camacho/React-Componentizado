@@ -1,10 +1,28 @@
-function Skills({ skills, nome, nivel }) {
+import Card from "../Card";
+
+
+function Skills({ skills }) {
+  const habilidades = [
+    {
+      titulo: "Html",
+      nivel: "avancado",
+      cor: "#a34b4b"
+    },
+    {
+      titulo: "Node",
+      nivel: "iniciante",
+      cor: "#0292bd"
+    },
+    {
+      titulo: "SQL",
+      nivel: "Query",
+      cor: "#356d4d"
+    }
+
+  ]
   return (
     <div className="skills">
-      <div class="skill-card">
-        <h3>{nome}</h3>
-        <p>Nível: {nivel}</p>
-      </div>
+      <Card habilidades={habilidades} />
     </div>
   );
 }
